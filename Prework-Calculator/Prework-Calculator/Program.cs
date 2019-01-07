@@ -11,8 +11,6 @@ namespace Prework_Calculator
             {
                 float num1 = 0;
                 float num2 = 0;
-                float result = 0;
-                string calcOperator = "";
 
                 Console.Clear();
                 Console.WriteLine("Calculator!");
@@ -38,6 +36,7 @@ namespace Prework_Calculator
                         displayResult(num1, num2, "+", Add(num1, num2));
                         break;
                     case 2:
+                        displayResult(num1, num2, "-", Subtract(num1, num2));
                         break;
                     case 3:
                         break;
@@ -59,5 +58,12 @@ namespace Prework_Calculator
         {
             return num1 + num2;
         }
+
+        static float Subtract(float num1, float num2)
+        {
+            return num1 - num2;
+        }
+
+       
     }
 }
