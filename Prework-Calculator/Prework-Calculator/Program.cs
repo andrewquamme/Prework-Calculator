@@ -12,15 +12,7 @@ namespace Prework_Calculator
                 float num1 = 0;
                 float num2 = 0;
 
-                Console.Clear();
-                Console.WriteLine("Calculator!");
-                Console.WriteLine("1: Addition");
-                Console.WriteLine("2: Subtraction");
-                Console.WriteLine("3: Multiplication");
-                Console.WriteLine("4: Division");
-                Console.WriteLine("5: Quit");
-                Console.Write("Make a selection: ");
-                userSelection = int.Parse(Console.ReadLine());
+                userSelection = ShowMenu();
 
                 if(userSelection != 5)
                 {
@@ -56,6 +48,19 @@ namespace Prework_Calculator
                         break;
                 }
             }
+        }
+
+        static int ShowMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Calculator!");
+            Console.WriteLine("1: Addition");
+            Console.WriteLine("2: Subtraction");
+            Console.WriteLine("3: Multiplication");
+            Console.WriteLine("4: Division");
+            Console.WriteLine("5: Quit");
+            Console.Write("Make a selection: ");
+            return int.Parse(Console.ReadLine());
         }
 
         static void displayResult(float num1, float num2, string calcOperator, float result)
