@@ -39,6 +39,7 @@ namespace Prework_Calculator
                         displayResult(num1, num2, "-", Subtract(num1, num2));
                         break;
                     case 3:
+                        displayResult(num1, num2, "x", Multiply(num1, num2));
                         break;
                     case 4:
                         break;
@@ -64,6 +65,12 @@ namespace Prework_Calculator
             return num1 - num2;
         }
 
+        static float Multiply(float num1, float num2)
+        {
+            return num1 * num2;
+        }
+
        
+
     }
 }
