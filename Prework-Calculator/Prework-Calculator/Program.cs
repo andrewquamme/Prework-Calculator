@@ -42,6 +42,15 @@ namespace Prework_Calculator
                         displayResult(num1, num2, "x", Multiply(num1, num2));
                         break;
                     case 4:
+                        if(num2 == 0)
+                        {
+                            Console.WriteLine("Cannot divide by zero!");
+                            Console.Write("Press any key to continue");
+                            Console.ReadLine();
+                        } else
+                        {
+                            displayResult(num1, num2, "/", Divide(num1, num2));
+                        }
                         break;
                     default:
                         break;
@@ -70,7 +79,9 @@ namespace Prework_Calculator
             return num1 * num2;
         }
 
-       
-
+        static float Divide(float num1, float num2)
+        {
+            return num1 / num2;
+        }
     }
 }
