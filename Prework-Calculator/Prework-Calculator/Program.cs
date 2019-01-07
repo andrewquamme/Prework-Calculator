@@ -21,16 +21,21 @@ namespace Prework_Calculator
                 Console.WriteLine("3: Multiplication");
                 Console.WriteLine("4: Division");
                 Console.WriteLine("5: Quit");
+                Console.Write("Make a selection: ");
                 userSelection = int.Parse(Console.ReadLine());
 
-                num1 = float.Parse(Console.ReadLine());
-                num2 = float.Parse(Console.ReadLine());
+                if(userSelection != 5)
+                {
+                    Console.Write("Enter the first number: ");
+                    num1 = float.Parse(Console.ReadLine());
+                    Console.Write("Enter the second number: ");
+                    num2 = float.Parse(Console.ReadLine());
+                }
 
                 switch (userSelection)
                 {
                     case 1:
-                        result = Add(num1, num2);
-                        calcOperator = "+";
+                        displayResult(num1, num2, "+", Add(num1, num2));
                         break;
                     case 2:
                         break;
@@ -38,15 +43,19 @@ namespace Prework_Calculator
                         break;
                     case 4:
                         break;
+                    default:
+                        break;
                 }
-
-                Console.WriteLine($"{0} {1} {2} = {3}\nPress any key to continue",num1, calcOperator, num2, result);
-                Console.ReadLine();
             }
-            
         }
 
-        public float Add(float num1, float num2)
+        static void displayResult(float num1, float num2, string calcOperator, float result)
+        {
+            Console.WriteLine("{0} {1} {2} = {3}", num1, calcOperator, num2, result);
+            Console.ReadLine();
+        }
+
+        static float Add(float num1, float num2)
         {
             return num1 + num2;
         }
